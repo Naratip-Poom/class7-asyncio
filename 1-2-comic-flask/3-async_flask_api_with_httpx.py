@@ -20,8 +20,8 @@ async def get_xkcd_image(session): # dont wait for the response of API
 async def get_multiple_images(number): 
     async with httpx.AsyncClient() as client:
         task = [get_xkcd_image(client) for i in range(number)]
-        res =  await asyncio.gather(*task)
-        return res
+        resaults =  await asyncio.gather(*task)
+        return resaults
 
 @app.get('/comic')
 async def hello(): 
